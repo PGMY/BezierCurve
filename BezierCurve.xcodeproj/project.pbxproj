@@ -14,6 +14,7 @@
 		25CB42B41A95C3770037D755 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CB42B31A95C3770037D755 /* Images.xcassets */; };
 		25CB42B71A95C3770037D755 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25CB42B51A95C3770037D755 /* LaunchScreen.xib */; };
 		25CB42C31A95C3770037D755 /* BezierCurveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CB42C21A95C3770037D755 /* BezierCurveTests.m */; };
+		25CB42FF1A95C8A00037D755 /* BezierCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CB42FE1A95C8A00037D755 /* BezierCurveView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		25CB42BC1A95C3770037D755 /* BezierCurveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BezierCurveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CB42C11A95C3770037D755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25CB42C21A95C3770037D755 /* BezierCurveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BezierCurveTests.m; sourceTree = "<group>"; };
+		25CB42FD1A95C8A00037D755 /* BezierCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierCurveView.h; sourceTree = "<group>"; };
+		25CB42FE1A95C8A00037D755 /* BezierCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierCurveView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				25CB42AB1A95C3770037D755 /* AppDelegate.m */,
 				25CB42AD1A95C3770037D755 /* ViewController.h */,
 				25CB42AE1A95C3770037D755 /* ViewController.m */,
+				25CB42FD1A95C8A00037D755 /* BezierCurveView.h */,
+				25CB42FE1A95C8A00037D755 /* BezierCurveView.m */,
 				25CB42B01A95C3770037D755 /* Main.storyboard */,
 				25CB42B31A95C3770037D755 /* Images.xcassets */,
 				25CB42B51A95C3770037D755 /* LaunchScreen.xib */,
@@ -163,11 +168,12 @@
 		25CB429B1A95C3760037D755 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = PGMY;
 				TargetAttributes = {
 					25CB42A21A95C3770037D755 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 4GY5822369;
 					};
 					25CB42BB1A95C3770037D755 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CB42AF1A95C3770037D755 /* ViewController.m in Sources */,
+				25CB42FF1A95C8A00037D755 /* BezierCurveView.m in Sources */,
 				25CB42AC1A95C3770037D755 /* AppDelegate.m in Sources */,
 				25CB42A91A95C3770037D755 /* main.m in Sources */,
 			);
@@ -283,6 +290,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -345,8 +353,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BezierCurve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.pgmy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -355,8 +365,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BezierCurve/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.pgmy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -375,6 +387,7 @@
 				);
 				INFOPLIST_FILE = BezierCurveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.pgmy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BezierCurve.app/BezierCurve";
 			};
@@ -390,6 +403,7 @@
 				);
 				INFOPLIST_FILE = BezierCurveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.pgmy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BezierCurve.app/BezierCurve";
 			};
@@ -414,6 +428,7 @@
 				25CB42C81A95C3770037D755 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25CB42C91A95C3770037D755 /* Build configuration list for PBXNativeTarget "BezierCurveTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +437,7 @@
 				25CB42CB1A95C3770037D755 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

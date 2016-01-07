@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "BezierCurveView.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    BezierCurveView *bcView;
+}
 
 @end
 
@@ -17,6 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    bcView = [[BezierCurveView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:bcView];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    [bcView startAnimation];
+    
 }
 
 - (void)didReceiveMemoryWarning {
